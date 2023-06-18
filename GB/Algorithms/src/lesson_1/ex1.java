@@ -10,7 +10,6 @@ public class ex1 {
             System.out.println(integer);
         }
     }
-
     public static List<Integer> findAvaribleDivider(int number) {
         List<Integer> result = new ArrayList<>();
         for (int i = 1; i < number; i++) {
@@ -21,9 +20,9 @@ public class ex1 {
         return result;
     }
 
-    public static List<Integer> findSimleNumber (int max) {
+    public static List<Integer> findSimleNumber (int number) {
         List<Integer> result = new ArrayList<>();
-        for (int i = 1; i < max; i++) {
+        for (int i = 1; i <= number; i++) {
             boolean f = true;
             for (int j = 2; j < i; j++) {
                 if (i % j == 0) {

@@ -46,8 +46,7 @@ public class hm1 {
                 count++;  //  O(1)
             }
         }
-        return count; //  O(1)
-
+    return count; //  O(1)
     }
  
 }
