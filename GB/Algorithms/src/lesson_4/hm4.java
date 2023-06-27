@@ -129,6 +129,7 @@ class RedBlackTree1 {
         node.rightChild = betweenChild;
         rightChild.color = node.color;
         node.color = Color.RED;
+        // node = rightChild;
         return rightChild;
     }
 
