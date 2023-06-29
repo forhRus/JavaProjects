@@ -1,4 +1,4 @@
-package lesson_2.sem2;
+package lesson_2.lec2;
 
 import javax.imageio.IIOException;
 import java.io.FileNotFoundException;
