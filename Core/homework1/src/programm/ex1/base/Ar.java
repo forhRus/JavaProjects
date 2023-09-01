@@ -1,4 +1,4 @@
-package ex1.base;
+package programm.ex1.base;
 
 /**
  * класс с масивом строк

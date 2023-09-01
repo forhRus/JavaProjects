@@ -1,7 +1,7 @@
-package ex1;
+package programm.ex1;
 
-import ex1.base.Ar;
-import ex1.base.Output;
+import programm.ex1.base.Ar;
+import programm.ex1.base.Output;
 
 /**
  * Основной класс приложения.
