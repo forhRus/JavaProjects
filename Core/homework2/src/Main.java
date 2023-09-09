@@ -5,7 +5,7 @@ public class Main {
     private static final char DOT_HUMAN = 'X'; // Фишка игрока - человек
     private static final char DOT_AI = '0'; // Фишка игрока - компьютер
     private static final char DOT_EMPTY = '*'; // Признак пустого поля
-    private static int winCount;
+
 
     private static final Scanner scanner = new Scanner(System.in);
     private static final Random random = new Random();
@@ -14,11 +14,11 @@ public class Main {
 
     private static int fieldSizeX; // Размерность игрового поля
     private static int fieldSizeY; // Размерность игрового поля
-
+    private static int winCount; // Выигрышная комбинация
 
     public static void main(String[] args) {
         while (true) {
-            winCount = 4;
+            winCount = 3;
             int x = 5, y = 5;
             initialize(x, y);
             printField();
@@ -51,7 +51,6 @@ public class Main {
                 field[x][y] = DOT_EMPTY;
             }
         }
-
     }
 
     /**
@@ -82,7 +81,6 @@ public class Main {
             System.out.print("-");
         }
         System.out.println();
-
     }
 
     /**
@@ -92,7 +90,6 @@ public class Main {
         int x, y;
 
         do {
-
             while (true) {
                 System.out.print("Введите координату хода X (от 1 до 3): ");
                 if (scanner.hasNextInt()) {
@@ -185,37 +182,67 @@ public class Main {
      * @return
      */
     private static boolean checkWin(char c) {
-
-        // Проверка по трем горизонталям
-        if (field[0][0] == c && field[0][1] == c && field[0][2] == c) return true;
-        if (field[1][0] == c && field[1][1] == c && field[1][2] == c) return true;
-        if (field[2][0] == c && field[2][1] == c && field[2][2] == c) return true;
-
-        // Проверка по трем вертикалям
-        if (field[0][0] == c && field[1][0] == c && field[2][0] == c) return true;
-        if (field[0][1] == c && field[1][1] == c && field[2][1] == c) return true;
-        if (field[0][2] == c && field[1][2] == c && field[2][2] == c) return true;
-
-        // Проверка по диагоналям
-        if (field[0][0] == c && field[1][1] == c && field[2][2] == c) return true;
-        if (field[0][2] == c && field[1][1] == c && field[2][0] == c) return true;
-
-        return false;
-    }
-
-    private static boolean checkWinV2(char c) {
-
-
         for (int x = 0; x < fieldSizeX; x++) {
             for (int y = 0; y < fieldSizeY; y++) {
-
+                int count = 0;
+                //проверка горизонтали
+                if (!(y + winCount - 1 > fieldSizeY)) {
+                    for (int z = 0; z < winCount; z++) {
+                        if (field[x][y + z] == c) {
+                            count++;
+                            if (count == winCount) {
+                                return true;
+                            }
+                        } else {
+                            break;
+                        }
+                    }
+                }
+                count = 0;
+                //проверка вертикали
+                if (!(x + winCount - 1 > fieldSizeX)) {
+                    for (int z = 0; z < winCount; z++) {
+                        if (field[x + z][y] == c) {
+                            count++;
+                            if (count == winCount) {
+                                return true;
+                            }
+                        } else {
+                            break;
+                        }
+                    }
+                }
+                count = 0;
+                //проверка диагонали1
+                if (x + winCount - 1 <= fieldSizeX && y + winCount - 1 <= fieldSizeY) {
+                    for (int z = 0; z < winCount; z++) {
+                        if (field[x + z][y + z] == c) {
+                            count++;
+                            if (count == winCount) {
+                                return true;
+                            }
+                        } else {
+                            break;
+                        }
+                    }
+                }
+                count = 0;
+                //проверка диагонали2
+                if (x - winCount >= 0 && y + winCount - 1 <= fieldSizeY) {
+                    for (int z = 0; z < winCount; z++) {
+                        if (field[x - z][y + z] == c) {
+                            count++;
+                            if (count == winCount) {
+                                return true;
+                            }
+                        } else {
+                            break;
+                        }
+                    }
+                }
             }
         }
 
-        return false;
-    }
-
-    static boolean check1(int x, int y, int win) {
         return false;
     }
 
