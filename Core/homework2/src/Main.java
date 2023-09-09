@@ -2,11 +2,10 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
-
-    private static final int WIN_COUNT = 4; // Выигрышная комбинация
     private static final char DOT_HUMAN = 'X'; // Фишка игрока - человек
     private static final char DOT_AI = '0'; // Фишка игрока - компьютер
     private static final char DOT_EMPTY = '*'; // Признак пустого поля
+    private static int winCount;
 
     private static final Scanner scanner = new Scanner(System.in);
     private static final Random random = new Random();
@@ -18,12 +17,12 @@ public class Main {
 
 
     public static void main(String[] args) {
-        field = new char[3][];
-
-        while (true){
-            initialize();
+        while (true) {
+            winCount = 4;
+            int x = 5, y = 5;
+            initialize(x, y);
             printField();
-            while (true){
+            while (true) {
                 humanTurn();
                 printField();
                 if (checkGameState(DOT_HUMAN, "Вы победили!"))
@@ -42,13 +41,13 @@ public class Main {
     /**
      * Инициализация объектов игры
      */
-    private static void initialize(){
+    private static void initialize(int xSize, int ySize) {
 
-        fieldSizeX = 3;
-        fieldSizeY = 3;
+        fieldSizeX = xSize;
+        fieldSizeY = ySize;
         field = new char[fieldSizeX][fieldSizeY];
-        for (int x = 0; x < fieldSizeX; x++){
-            for (int y = 0; y < fieldSizeY; y++){
+        for (int x = 0; x < fieldSizeX; x++) {
+            for (int y = 0; y < fieldSizeY; y++) {
                 field[x][y] = DOT_EMPTY;
             }
         }
@@ -57,29 +56,29 @@ public class Main {
 
     /**
      * Отрисовка игрового поля
-     *
-     *     +-1-2-3-
-     *     1|*|X|0|
-     *     2|*|*|0|
-     *     3|*|*|0|
-     *     --------
+     * <p>
+     * +-1-2-3-
+     * 1|*|X|0|
+     * 2|*|*|0|
+     * 3|*|*|0|
+     * --------
      */
-    private static void printField(){
+    private static void printField() {
         System.out.print("+");
-        for (int x = 0; x < fieldSizeX * 2 + 1; x++){
+        for (int x = 0; x < fieldSizeX * 2 + 1; x++) {
             System.out.print((x % 2 == 0) ? "-" : x / 2 + 1);
         }
         System.out.println();
 
-        for (int x = 0; x < fieldSizeX; x++){
+        for (int x = 0; x < fieldSizeX; x++) {
             System.out.print(x + 1 + "|");
-            for (int y = 0; y < fieldSizeY; y++){
+            for (int y = 0; y < fieldSizeY; y++) {
                 System.out.print(field[x][y] + "|");
             }
             System.out.println();
         }
 
-        for (int x = 0; x < fieldSizeX * 2 + 2; x++){
+        for (int x = 0; x < fieldSizeX * 2 + 2; x++) {
             System.out.print("-");
         }
         System.out.println();
@@ -89,32 +88,30 @@ public class Main {
     /**
      * Обработка хода игрока (человек)
      */
-    private static void humanTurn(){
+    private static void humanTurn() {
         int x, y;
 
         do {
 
-            while (true){
+            while (true) {
                 System.out.print("Введите координату хода X (от 1 до 3): ");
-                if (scanner.hasNextInt()){
+                if (scanner.hasNextInt()) {
                     x = scanner.nextInt() - 1;
                     scanner.nextLine();
                     break;
-                }
-                else {
+                } else {
                     System.out.println("Некорректное число, повторите попытку ввода.");
                     scanner.nextLine();
                 }
             }
 
-            while (true){
+            while (true) {
                 System.out.print("Введите координату хода Y (от 1 до 3): ");
-                if (scanner.hasNextInt()){
+                if (scanner.hasNextInt()) {
                     y = scanner.nextInt() - 1;
                     scanner.nextLine();
                     break;
-                }
-                else {
+                } else {
                     System.out.println("Некорректное число, повторите попытку ввода.");
                     scanner.nextLine();
                 }
@@ -123,30 +120,34 @@ public class Main {
         while (!isCellValid(x, y) || !isCellEmpty(x, y));
         field[x][y] = DOT_HUMAN;
     }
+
     /**
      * Проверка, ячейка является пустой (DOT_EMPTY)
+     *
      * @param x
      * @param y
      * @return
      */
-    private static boolean isCellEmpty(int x, int y){
+    private static boolean isCellEmpty(int x, int y) {
         return field[x][y] == DOT_EMPTY;
     }
+
     /**
      * Проверка корректности ввода
      * (координаты хода не должны превышать размерность игрового поля)
+     *
      * @param x
      * @param y
      * @return
      */
-    private static boolean isCellValid(int x, int y){
+    private static boolean isCellValid(int x, int y) {
         return x >= 0 && x < fieldSizeX && y >= 0 && y < fieldSizeY;
     }
 
     /**
      * Обработка хода компьютера
      */
-    private static void aiTurn(){
+    private static void aiTurn() {
         int x, y;
 
         do {
@@ -159,11 +160,12 @@ public class Main {
 
     /**
      * Проверка состояния игры
+     *
      * @param c фишка игрока
      * @param s победный слоган
      * @return
      */
-    private static boolean checkGameState(char c, String s){
+    private static boolean checkGameState(char c, String s) {
         if (checkWin(c)) {
             System.out.println(s);
             return true;
@@ -178,10 +180,11 @@ public class Main {
 
     /**
      * Проверка победы
+     *
      * @param c
      * @return
      */
-    private static boolean checkWin(char c){
+    private static boolean checkWin(char c) {
 
         // Проверка по трем горизонталям
         if (field[0][0] == c && field[0][1] == c && field[0][2] == c) return true;
@@ -200,11 +203,11 @@ public class Main {
         return false;
     }
 
-    private static boolean checkWinV2(char c){
+    private static boolean checkWinV2(char c) {
 
 
-        for (int x = 0; x < fieldSizeX; x++){
-            for (int y = 0; y < fieldSizeY; y++){
+        for (int x = 0; x < fieldSizeX; x++) {
+            for (int y = 0; y < fieldSizeY; y++) {
 
             }
         }
@@ -212,17 +215,18 @@ public class Main {
         return false;
     }
 
-    static boolean check1(int x, int y, int win){
+    static boolean check1(int x, int y, int win) {
         return false;
     }
 
     /**
      * Проверка на ничью
+     *
      * @return
      */
-    private static boolean checkDraw(){
-        for (int x = 0; x < fieldSizeX; x++){
-            for (int y = 0; y < fieldSizeY; y++){
+    private static boolean checkDraw() {
+        for (int x = 0; x < fieldSizeX; x++) {
+            for (int y = 0; y < fieldSizeY; y++) {
                 if (isCellEmpty(x, y)) return false;
             }
         }
