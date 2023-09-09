@@ -18,8 +18,8 @@ public class Main {
 
     public static void main(String[] args) {
         while (true) {
-            winCount = 3;
-            int x = 5, y = 5;
+            winCount = 4;
+            int x = 6, y = 6;
             initialize(x, y);
             printField();
             while (true) {
@@ -145,14 +145,26 @@ public class Main {
      * Обработка хода компьютера
      */
     private static void aiTurn() {
-        int x, y;
-
-        do {
-            x = random.nextInt(fieldSizeX);
-            y = random.nextInt(fieldSizeY);
+        int xB, yB;
+        for (int x = 0; x < fieldSizeX; x++) {
+            for (int y = 0; y < fieldSizeY; y++) {
+                if(field[x][y] == DOT_EMPTY){
+                    field[x][y] = DOT_HUMAN;
+                    if (checkWin(DOT_HUMAN)){
+                        field[x][y] = DOT_AI;
+                        return;
+                    } else{
+                        field[x][y] = DOT_EMPTY;
+                    }
+                }
+            }
         }
-        while (!isCellEmpty(x, y));
-        field[x][y] = DOT_AI;
+        do {
+            xB = random.nextInt(fieldSizeX);
+            yB = random.nextInt(fieldSizeY);
+        }
+        while (!isCellEmpty(xB, yB));
+        field[xB][yB] = DOT_AI;
     }
 
     /**
@@ -186,64 +198,94 @@ public class Main {
             for (int y = 0; y < fieldSizeY; y++) {
                 int count = 0;
                 //проверка горизонтали
-                if (!(y + winCount - 1 > fieldSizeY)) {
-                    for (int z = 0; z < winCount; z++) {
-                        if (field[x][y + z] == c) {
-                            count++;
-                            if (count == winCount) {
-                                return true;
-                            }
-                        } else {
-                            break;
-                        }
-                    }
-                }
-                count = 0;
+                if (checkHor(c, x, y))
+                    return true;
+
                 //проверка вертикали
-                if (!(x + winCount - 1 > fieldSizeX)) {
-                    for (int z = 0; z < winCount; z++) {
-                        if (field[x + z][y] == c) {
-                            count++;
-                            if (count == winCount) {
-                                return true;
-                            }
-                        } else {
-                            break;
-                        }
-                    }
-                }
-                count = 0;
+                if (checkVer(c, x, y))
+                    return true;
+
                 //проверка диагонали1
-                if (x + winCount - 1 <= fieldSizeX && y + winCount - 1 <= fieldSizeY) {
-                    for (int z = 0; z < winCount; z++) {
-                        if (field[x + z][y + z] == c) {
-                            count++;
-                            if (count == winCount) {
-                                return true;
-                            }
-                        } else {
-                            break;
-                        }
-                    }
-                }
-                count = 0;
+                if (checkDi1(c, x, y))
+                    return true;
+
                 //проверка диагонали2
-                if (x - winCount >= 0 && y + winCount - 1 <= fieldSizeY) {
-                    for (int z = 0; z < winCount; z++) {
-                        if (field[x - z][y + z] == c) {
-                            count++;
-                            if (count == winCount) {
-                                return true;
-                            }
-                        } else {
-                            break;
-                        }
-                    }
-                }
+                if (checkDi2(c, x, y))
+                    return true;
             }
         }
-
         return false;
+    }
+
+    //проверка диагонали1
+    private static boolean checkDi1(char c, int x, int y) {
+        boolean f = false;
+        if (x + winCount <= fieldSizeX && y + winCount <= fieldSizeY) {
+            for (int z = 0; z < winCount; z++) {
+                if (field[x + z][y + z] != c) {
+                    return false;
+                }
+            }
+            f = true;
+        }
+        return f;
+    }
+
+    //проверка диагонали2
+    private static boolean checkDi2(char c, int x, int y) {
+        boolean f = false;
+        if (x - winCount + 1 >= 0 && y + winCount <= fieldSizeY) {
+            for (int z = 0; z < winCount; z++) {
+                if (field[x - z][y + z] != c) {
+                    return false;
+                }
+            }
+            f = true;
+        }
+        return f;
+    }
+
+
+    /**
+     * Проверка горизонтали
+     *
+     * @param c
+     * @param x
+     * @param y
+     * @return
+     */
+    private static boolean checkHor(char c, int x, int y) {
+        boolean f = false;
+        if (y + winCount <= fieldSizeY) {
+            for (int z = 0; z < winCount; z++) {
+                if (field[x][y + z] != c) {
+                    return false;
+                }
+            }
+            f = true;
+        }
+        return f;
+    }
+
+    /**
+     * Проверка вертикали
+     *
+     * @param c
+     * @param x
+     * @param y
+     * @return
+     */
+    private static boolean checkVer(char c, int x, int y) {
+        boolean f = false;
+        if (x + winCount <= fieldSizeX) {
+            for (int z = 0; z < winCount; z++) {
+                if (field[x + z][y] != c) {
+                    return false;
+                }
+            }
+            f = true;
+        }
+        return f;
     }
 
     /**
