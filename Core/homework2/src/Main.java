@@ -1,22 +1,20 @@
-package ru.geekbrains.lesson2;
-
 import java.util.Random;
 import java.util.Scanner;
 
-public class Program {
+public class Main {
 
-    private static final int WIN_COUNT = 4; // Р’С‹РёРіСЂС‹С€РЅР°СЏ РєРѕРјР±РёРЅР°С†РёСЏ
-    private static final char DOT_HUMAN = 'X'; // Р¤РёС€РєР° РёРіСЂРѕРєР° - С‡РµР»РѕРІРµРє
-    private static final char DOT_AI = '0'; // Р¤РёС€РєР° РёРіСЂРѕРєР° - РєРѕРјРїСЊСЋС‚РµСЂ
-    private static final char DOT_EMPTY = '*'; // РџСЂРёР·РЅР°Рє РїСѓСЃС‚РѕРіРѕ РїРѕР»СЏ
+    private static final int WIN_COUNT = 4; // Выигрышная комбинация
+    private static final char DOT_HUMAN = 'X'; // Фишка игрока - человек
+    private static final char DOT_AI = '0'; // Фишка игрока - компьютер
+    private static final char DOT_EMPTY = '*'; // Признак пустого поля
 
     private static final Scanner scanner = new Scanner(System.in);
     private static final Random random = new Random();
 
-    private static char[][] field; // Р”РІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ С…СЂР°РЅРёС‚ С‚РµРєСѓС‰РµРµ СЃРѕСЃС‚РѕСЏРЅРёРµ РёРіСЂРѕРІРѕРіРѕ РїРѕР»СЏ
+    private static char[][] field; // Двумерный массив хранит текущее состояние игрового поля
 
-    private static int fieldSizeX; // Р Р°Р·РјРµСЂРЅРѕСЃС‚СЊ РёРіСЂРѕРІРѕРіРѕ РїРѕР»СЏ
-    private static int fieldSizeY; // Р Р°Р·РјРµСЂРЅРѕСЃС‚СЊ РёРіСЂРѕРІРѕРіРѕ РїРѕР»СЏ
+    private static int fieldSizeX; // Размерность игрового поля
+    private static int fieldSizeY; // Размерность игрового поля
 
 
     public static void main(String[] args) {
@@ -28,21 +26,21 @@ public class Program {
             while (true){
                 humanTurn();
                 printField();
-                if (checkGameState(DOT_HUMAN, "Р’С‹ РїРѕР±РµРґРёР»Рё!"))
+                if (checkGameState(DOT_HUMAN, "Вы победили!"))
                     break;
                 aiTurn();
                 printField();
-                if (checkGameState(DOT_AI, "РџРѕР±РµРґРёР» РєРѕРјРїСЊСЋС‚РµСЂ!"))
+                if (checkGameState(DOT_AI, "Победил компьютер!"))
                     break;
             }
-            System.out.print("Р–РµР»Р°РµС‚Рµ СЃС‹РіСЂР°С‚СЊ РµС‰Рµ СЂР°Р·? (Y - РґР°): ");
+            System.out.print("Желаете сыграть еще раз? (Y - да): ");
             if (!scanner.next().equalsIgnoreCase("Y"))
                 break;
         }
     }
 
     /**
-     * РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РѕР±СЉРµРєС‚РѕРІ РёРіСЂС‹
+     * Инициализация объектов игры
      */
     private static void initialize(){
 
@@ -58,7 +56,7 @@ public class Program {
     }
 
     /**
-     * РћС‚СЂРёСЃРѕРІРєР° РёРіСЂРѕРІРѕРіРѕ РїРѕР»СЏ
+     * Отрисовка игрового поля
      *
      *     +-1-2-3-
      *     1|*|X|0|
@@ -89,7 +87,7 @@ public class Program {
     }
 
     /**
-     * РћР±СЂР°Р±РѕС‚РєР° С…РѕРґР° РёРіСЂРѕРєР° (С‡РµР»РѕРІРµРє)
+     * Обработка хода игрока (человек)
      */
     private static void humanTurn(){
         int x, y;
@@ -97,27 +95,27 @@ public class Program {
         do {
 
             while (true){
-                System.out.print("Р’РІРµРґРёС‚Рµ РєРѕРѕСЂРґРёРЅР°С‚Сѓ С…РѕРґР° X (РѕС‚ 1 РґРѕ 3): ");
+                System.out.print("Введите координату хода X (от 1 до 3): ");
                 if (scanner.hasNextInt()){
                     x = scanner.nextInt() - 1;
                     scanner.nextLine();
                     break;
                 }
                 else {
-                    System.out.println("РќРµРєРѕСЂСЂРµРєС‚РЅРѕРµ С‡РёСЃР»Рѕ, РїРѕРІС‚РѕСЂРёС‚Рµ РїРѕРїС‹С‚РєСѓ РІРІРѕРґР°.");
+                    System.out.println("Некорректное число, повторите попытку ввода.");
                     scanner.nextLine();
                 }
             }
 
             while (true){
-                System.out.print("Р’РІРµРґРёС‚Рµ РєРѕРѕСЂРґРёРЅР°С‚Сѓ С…РѕРґР° Y (РѕС‚ 1 РґРѕ 3): ");
+                System.out.print("Введите координату хода Y (от 1 до 3): ");
                 if (scanner.hasNextInt()){
                     y = scanner.nextInt() - 1;
                     scanner.nextLine();
                     break;
                 }
                 else {
-                    System.out.println("РќРµРєРѕСЂСЂРµРєС‚РЅРѕРµ С‡РёСЃР»Рѕ, РїРѕРІС‚РѕСЂРёС‚Рµ РїРѕРїС‹С‚РєСѓ РІРІРѕРґР°.");
+                    System.out.println("Некорректное число, повторите попытку ввода.");
                     scanner.nextLine();
                 }
             }
@@ -126,7 +124,7 @@ public class Program {
         field[x][y] = DOT_HUMAN;
     }
     /**
-     * РџСЂРѕРІРµСЂРєР°, СЏС‡РµР№РєР° СЏРІР»СЏРµС‚СЃСЏ РїСѓСЃС‚РѕР№ (DOT_EMPTY)
+     * Проверка, ячейка является пустой (DOT_EMPTY)
      * @param x
      * @param y
      * @return
@@ -135,8 +133,8 @@ public class Program {
         return field[x][y] == DOT_EMPTY;
     }
     /**
-     * РџСЂРѕРІРµСЂРєР° РєРѕСЂСЂРµРєС‚РЅРѕСЃС‚Рё РІРІРѕРґР°
-     * (РєРѕРѕСЂРґРёРЅР°С‚С‹ С…РѕРґР° РЅРµ РґРѕР»Р¶РЅС‹ РїСЂРµРІС‹С€Р°С‚СЊ СЂР°Р·РјРµСЂРЅРѕСЃС‚СЊ РёРіСЂРѕРІРѕРіРѕ РїРѕР»СЏ)
+     * Проверка корректности ввода
+     * (координаты хода не должны превышать размерность игрового поля)
      * @param x
      * @param y
      * @return
@@ -146,7 +144,7 @@ public class Program {
     }
 
     /**
-     * РћР±СЂР°Р±РѕС‚РєР° С…РѕРґР° РєРѕРјРїСЊСЋС‚РµСЂР°
+     * Обработка хода компьютера
      */
     private static void aiTurn(){
         int x, y;
@@ -160,9 +158,9 @@ public class Program {
     }
 
     /**
-     * РџСЂРѕРІРµСЂРєР° СЃРѕСЃС‚РѕСЏРЅРёСЏ РёРіСЂС‹
-     * @param c С„РёС€РєР° РёРіСЂРѕРєР°
-     * @param s РїРѕР±РµРґРЅС‹Р№ СЃР»РѕРіР°РЅ
+     * Проверка состояния игры
+     * @param c фишка игрока
+     * @param s победный слоган
      * @return
      */
     private static boolean checkGameState(char c, String s){
@@ -171,31 +169,31 @@ public class Program {
             return true;
         }
         if (checkDraw()) {
-            System.out.println("РќРёС‡СЊСЏ!");
+            System.out.println("Ничья!");
             return true;
         }
 
-        return false; // РРіСЂР° РїСЂРѕРґРѕР»Р¶Р°РµС‚СЃСЏ
+        return false; // Игра продолжается
     }
 
     /**
-     * РџСЂРѕРІРµСЂРєР° РїРѕР±РµРґС‹
+     * Проверка победы
      * @param c
      * @return
      */
     private static boolean checkWin(char c){
 
-        // РџСЂРѕРІРµСЂРєР° РїРѕ С‚СЂРµРј РіРѕСЂРёР·РѕРЅС‚Р°Р»СЏРј
+        // Проверка по трем горизонталям
         if (field[0][0] == c && field[0][1] == c && field[0][2] == c) return true;
         if (field[1][0] == c && field[1][1] == c && field[1][2] == c) return true;
         if (field[2][0] == c && field[2][1] == c && field[2][2] == c) return true;
 
-        // РџСЂРѕРІРµСЂРєР° РїРѕ С‚СЂРµРј РІРµСЂС‚РёРєР°Р»СЏРј
+        // Проверка по трем вертикалям
         if (field[0][0] == c && field[1][0] == c && field[2][0] == c) return true;
         if (field[0][1] == c && field[1][1] == c && field[2][1] == c) return true;
         if (field[0][2] == c && field[1][2] == c && field[2][2] == c) return true;
 
-        // РџСЂРѕРІРµСЂРєР° РїРѕ РґРёР°РіРѕРЅР°Р»СЏРј
+        // Проверка по диагоналям
         if (field[0][0] == c && field[1][1] == c && field[2][2] == c) return true;
         if (field[0][2] == c && field[1][1] == c && field[2][0] == c) return true;
 
@@ -219,7 +217,7 @@ public class Program {
     }
 
     /**
-     * РџСЂРѕРІРµСЂРєР° РЅР° РЅРёС‡СЊСЋ
+     * Проверка на ничью
      * @return
      */
     private static boolean checkDraw(){

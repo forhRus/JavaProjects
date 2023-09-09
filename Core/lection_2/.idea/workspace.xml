@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bdb6ea6c-b34f-4b07-b6b4-71453392ddab" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../homework1/src/programm/ex1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../homework1/src/programm/ex1/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../homework1/src/programm/ex1/base/Ar.java" beforeDir="false" afterPath="$PROJECT_DIR$/../homework1/src/programm/ex1/base/Ar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../homework1/src/programm/ex1/base/Output.java" beforeDir="false" afterPath="$PROJECT_DIR$/../homework1/src/programm/ex1/base/Output.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../homework2/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../homework2/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,9 +22,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2UnbgYPMvVAqE0h14Y0AScDosBs" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -35,14 +33,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "onboarding.tips.debug.path": "E:/Projects/Java/Core/lection_2/src/Main.java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;E:/Projects/Java/Core/lection_2/src/Main.java&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
