@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Worker extends Employee{
+    private static String _type = "Рабочий";
 
     private Worker(String surName, String name, double salary){
-        super(surName, name, salary);
+        super(_type, surName, name);
+        this.setSalary(salary);
         //System.out.println("Constructor - Worker");
     }
 
@@ -24,14 +26,7 @@ public class Worker extends Employee{
         return employees;
     }
 
-    @Override
-    public double calculateSalary() {
-        return salary;
-    }
 
-    @Override
-    public String toString() {
-        return String.format("%s %s; Рабочий; Среднемесячная заработная плата (фиксированная месячная оплата): %.2f (руб.)",
-                surName, name, salary);
-    }
+
+
 }

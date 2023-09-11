@@ -2,31 +2,21 @@ package Base;
 
 import java.util.Random;
 
-public abstract class Employee implements Comparable<Employee> {
+public abstract class Employee implements Comparable<Employee>{
 
     //region Public Methods
 
-    /**
-     * Расчет среднемесячной заработной платы
-     * @return
-     */
-    public abstract double calculateSalary();
-
     @Override
     public int compareTo(Employee o) {
-        return Double.compare(calculateSalary(), o.calculateSalary());
+        return Double.compare(this.salary, o.getSalary());
         //return calculateSalary() == o.calculateSalary() ? 0 :
         //        calculateSalary() > o.calculateSalary() ? 1 : -1;
     }
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", surName='" + surName + '\'' +
-                ", salary=" + salary +
-                '}';
+        return String.format("%s %s; %s; Среднемесячная заработная плата: %.2f (руб.)",
+                surName, name, type, salary);
     }
 
     //endregion
@@ -38,19 +28,13 @@ public abstract class Employee implements Comparable<Employee> {
         id = ++counter;
     }
 
-    private Employee(){
-        this("#Surnane#", "#Name#");
+    protected Employee(String type, String surName, String name){
+        this(type, surName, name, 0);
     }
 
-    private Employee(String surName, String name){
-        this(surName, name, 500);
-    }
-
-    protected Employee(String surName, String name, double salary){
+    protected Employee(String type, String surName, String name, double salary){
         //System.out.println("Constructor - Employee");
-        if (salary < 500){
-            throw new RuntimeException("Ставка заработной платы должна быть не менее 500");
-        }
+        this.type = type;
         this.surName = surName;
         this.name = name;
         this.salary = salary;
@@ -83,11 +67,18 @@ public abstract class Employee implements Comparable<Employee> {
         this.salary = salary;
     }
 
+    public String getType() {
+        return type;
+    }
     //endregion
 
     //region Fields
 
     private int id;
+    /**
+     * Тип найма
+     */
+    protected String type;
 
     /**
      * Имя
@@ -100,7 +91,7 @@ public abstract class Employee implements Comparable<Employee> {
     protected String surName;
 
     /**
-     * Ставка заработной платы
+     * Заработной платы
      */
     protected double salary;
 
