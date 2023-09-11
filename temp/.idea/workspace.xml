@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8b7cd699-270b-4f82-9dfd-59a349e72a05" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Core/homework1/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Core/homework1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Core/homework1/.idea/artifacts/homework1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Core/homework1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Core/homework1/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Core/homework1/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Core/homework1/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Core/homework1/homework1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Core/homework1/src/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Core/homework1/src/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Core/homework1/src/dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Core/homework1/src/programm/ex1/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Core/homework1/src/programm/ex1/base/Ar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Core/homework1/src/programm/ex1/base/Output.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Core/homework1/src/screen_docker.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Core/homework2/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Core/homework2/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Core/homework2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Core/homework2/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Core/homework2/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Core/homework2/homework2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Core/homework2/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Core/homework2/src/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Core/lection_2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Core/lection_2/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Core/lection_2/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Core/lection_2/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Core/lection_2/out/production/lection_2/task_1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Core/lection_2/out/production/lection_2/task_2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Core/lection_2/out/production/lection_2/task_3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Metanit/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Metanit/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Metanit/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Metanit/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Metanit/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Metanit/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Metanit/Metanit.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Metanit/src/level1/ex1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Metanit/src/level1/ex2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Metanit/src/level1/ex3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Metanit/src/level1/ex4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Metanit/src/level1/ex5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Metanit/src/level2/ex1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Metanit/src/level2/ex2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Metanit/src/level2/ex3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Metanit/src/level2/ex4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Metanit/src/level2/ex5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2UD0cs8XK8JUXnAnWjY0tOEQtdz" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Projects/Java/temp&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;E:/Projects/Java/temp/src/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="temp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="temp" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8b7cd699-270b-4f82-9dfd-59a349e72a05" name="Changes" comment="" />
+      <created>1692458932565</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1692458932565</updated>
+    </task>
+    <servers />
+  </component>
+</project>
