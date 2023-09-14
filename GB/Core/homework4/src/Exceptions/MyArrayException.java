@@ -1,18 +1,14 @@
 package Exceptions;
 
 public class MyArrayException extends Exception{
-    private String _msg;
-    private Object[][] arr;
-    public MyArrayException(String msg, Object[][] arr) {
+      private Object[][] array;
+    public MyArrayException(String msg, Object[][] array) {
         super(msg);
-        _msg = msg;
+        this.array = array;
     }
 
-    public String get_msg() {
-        return _msg;
-    }
 
-    public Object[][] getArr() {
-        return arr;
+    public Object[][] getArray() {
+        return array;
     }
 }
