@@ -9,4 +9,5 @@ MyArrayDataException с детализацией, в какой именно я�
 MyArraySizeException и MyArrayDataException и вывести результат расчета.
 
 ### Проделанная работа
-1. 
+1. Создана иерархия исключений MyArrayException с классами наследниками MyArraySizeException и MyArrayDataException
+2. 
