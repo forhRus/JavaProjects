@@ -1,7 +1,7 @@
 package Exceptions;
 
 public class MyArraySizeException extends MyArrayException {
-     public MyArraySizeException(String msg, Object[][] arr) {
-        super(msg, arr);
+     public MyArraySizeException(String msg, String[][] array) {
+        super(msg, array);
     }
 }
