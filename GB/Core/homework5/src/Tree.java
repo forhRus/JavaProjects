@@ -2,11 +2,7 @@ import java.io.File;
 
 public class Tree {
 
-    public static void main(String[] args) {
 
-        print(new File("."), "", true);
-
-    }
 
     /**
      * TODO: Доработать метод print, необходимо распечатывать директории и файлы
