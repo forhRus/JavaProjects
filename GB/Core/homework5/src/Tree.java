@@ -22,14 +22,14 @@ public class Tree {
         }
         System.out.println(file.getName());
 
-        File[] files = file.listFiles();
-        if (files == null)
-            return;
-
-        int length = files.length;
-
-        for (int i = 0; i < length; i++) {
-            print(files[i], indent, i == length - 1);
+        if(file.isDirectory()){
+            File[] files = file.listFiles();
+            if (files == null)
+                return;
+            int length = files.length;
+            for (int i = 0; i < length; i++) {
+                print(files[i], indent, i == length - 1);
+            }
         }
     }
 

@@ -30,7 +30,7 @@ public class Program {
         File fileBackUp = new File("./src/backup");
         backUp(fileSource, fileBackUp);
 
-        Tree.print(new File("./src"), "", true);
+        Tree.print(new File("."), "", true);
     }
 
     /**
